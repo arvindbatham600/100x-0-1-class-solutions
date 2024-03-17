@@ -8,7 +8,7 @@ const app = express();
 
 // get request on your port
 app.get("/", (req, res) => {
-  res.send("Hello Arvind !!..");
+  res.send("<i>Hello Arvind !!..</i>");
 });
 // access the about route using /route
 app.get("/about", (req, res) => {
