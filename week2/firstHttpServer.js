@@ -6,8 +6,9 @@ const port = 4000;
 // creat object of the  express class ==>
 const app = express();
 
-// get request on your port
+// get request on your ports
 app.get("/", (req, res) => {
+  console.log(req.body.message)
   res.send("<i>Hello Arvind !!..</i>");
 });
 // access the about route using /route
@@ -16,7 +17,7 @@ app.get("/about", (req, res) => {
   res.send(about);
 });
 
-// can also send html files.... ==> 
+// can also send html files.... ==>
 
 app.listen(port, () => {
   console.log(`we are listening on port : ${port}`);

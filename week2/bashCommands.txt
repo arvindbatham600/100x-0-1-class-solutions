@@ -1,0 +1,19 @@
+Bash Commands -->
+1. pwd --> path of your directory
+2. cd --> current directory
+3. ls --> list the files
+4. mkdir --> to create new directory/Folder
+5. touch --> to create new file
+6. cat --> to print the content of your file
+7. vi --> to open vim editor 
+    7.1 i --> for insert mode
+    7.2 :q! --> exit from vim editor
+    7.3 :wq! --> save and exit from vim editor
+8. mv --> move command to move files and folders form one place to another
+9. cp --> copy command " --  --                            --- "
+    9.1 cp file /newLocation
+    9.2 cp folder -r /newLocation
+
+Node Commands -->
+1. node --> will open shell where you can type your code and check..
+2. npm install library --> to install external library
