@@ -16,6 +16,8 @@ app.get("/about", (req, res) => {
   res.send(about);
 });
 
+// can also send html files.... ==> 
+
 app.listen(port, () => {
   console.log(`we are listening on port : ${port}`);
 });
