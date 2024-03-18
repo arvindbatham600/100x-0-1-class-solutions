@@ -1,5 +1,5 @@
 Bash Commands -->
-1. pwd --> path of your directory
+1. pwd --> print working directory
 2. cd --> current directory
 3. ls --> list the files
 4. mkdir --> to create new directory/Folder
