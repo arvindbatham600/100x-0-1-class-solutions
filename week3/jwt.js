@@ -1,0 +1,68 @@
+const express = require("express");
+const jwt = require("jsonwebtoken");
+const jwtPassword = "arvind";
+const app = express();
+app.use(express.json());
+
+const ALL_USERS = [
+  {
+    username: "harkirat@gmail.com",
+    password: "123",
+    name: "harkirat singh",
+  },
+  {
+    username: "raman@gmail.com",
+    password: "123321",
+    name: "Raman singh",
+  },
+  {
+    username: "priya@gmail.com",
+    password: "123321",
+    name: "Priya kumari",
+  },
+];
+
+function userExists(username, password) {
+  let exist = false;
+  ALL_USERS.find((user) => {
+    if (user.username === username && user.password === password) {
+      exist = true;
+    }
+  });
+  return exist;
+}
+
+app.post("/signin", (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  const exist = userExists(username, password);
+
+  if (!exist) {
+    res.status(403).json({
+      msg: "invalid user",
+    });
+  }
+
+  const token = jwt.sign({ username: username }, jwtPassword);
+  res.json({
+    token,
+  });
+});
+
+app.get("/users", (req, res) => {
+  const token = req.headers.authorization;
+  try {
+    const decode = jwt.decode(token, jwtPassword);
+    const username = decode.username;
+    console.log("decoded username", username);
+    res.json({
+      ALL_USERS,
+    });
+  } catch (err) {
+    return res.status(403).json({
+      msg: "Invalid token",
+    });
+  }
+});
+
+app.listen(3000, () => console.log("yes we are listening on port 3000"));
