@@ -1,6 +1,6 @@
 const express = require("express");
-const jwt = require("jsonwebtoken");
-const jwtPassword = "arvind";
+const jwt = require("jsonwebtoken"); // imported jwt library -->
+const jwtPassword = "arvind"; // jwt password to encode and decode the username
 const app = express();
 app.use(express.json());
 
@@ -43,7 +43,7 @@ app.post("/signin", (req, res) => {
     });
   }
 
-  const token = jwt.sign({ username: username }, jwtPassword);
+  const token = jwt.sign({ username: username }, jwtPassword); // creating token 
   res.json({
     token,
   });
@@ -52,9 +52,8 @@ app.post("/signin", (req, res) => {
 app.get("/users", (req, res) => {
   const token = req.headers.authorization;
   try {
-    const decode = jwt.decode(token, jwtPassword);
+    const decode = jwt.decode(token, jwtPassword); // decoding the  username
     const username = decode.username;
-    console.log("decoded username", username);
     res.json({
       ALL_USERS,
     });
@@ -65,4 +64,4 @@ app.get("/users", (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log("yes we are listening on port 3000"));
+app.listen(3000, () => console.log("listening on port 3000"));
