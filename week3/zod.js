@@ -7,11 +7,11 @@ const schema = zod.array(zod.number());
 
 // how to create schema -->
 
-// const userSchema = zod.object({
-//   email: zod.string().email(),   // will check the valid email
-//   passowrd: zod.string().min(8), // minimum 8 letters should be in password
-//   country: zod.literal("IN").or(zod.literal("USA")), // country should be either IN or USA
-// });
+const userSchema = zod.object({
+  email: zod.string().email(),   // will check the valid email
+  passowrd: zod.string().min(8), // minimum 8 letters should be in password
+  country: zod.literal("IN").or(zod.literal("USA")), // country should be either IN or USA
+});
 
 
 
