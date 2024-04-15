@@ -10,13 +10,12 @@
     <div class="main">
       <div class="card">
         <label for="firstNumber">First Number :</label>
-        <input id="firstNumber" type="text" name="firstNumber" placeholder="first number" />
+        <input oninput="deBouncing()" id="firstNumber" type="text" name="firstNumber" placeholder="first number" />
         <br />
         <label for = "secondNumber">Second Number :</label>
-        <input id="secondNumber" type="text" name="secondNmber" placeholder="second number" />
+        <input oninput="deBouncing()" id="secondNumber" type="text" name="secondNmber" placeholder="second number" />
         <br />
-        <button class="sum" >Calculate sum</button>
-        <div class="answer"></div>
+        <div id="answer"></div>
       </div>
     </div>
 
