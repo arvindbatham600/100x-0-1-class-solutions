@@ -4,4 +4,3 @@ which has features-
 
 - Anyone can create a todo list
 - Anyone can delete a todo list
-- Anyone can mark todo as completed 

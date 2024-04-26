@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 mongoose.connect(
-  "your url/todos"
+  "/todos"
 );
 
 const todoSchema = mongoose.Schema({
