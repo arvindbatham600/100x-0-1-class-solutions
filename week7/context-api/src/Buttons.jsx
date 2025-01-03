@@ -1,14 +1,17 @@
-import { useContext } from "react";
-import { CountContext } from "./context";
+// import { useContext } from "react";
+// import { CountContext } from "./context";
+// import { useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
+import { countAtom } from "./store/atoms/count";
 
-const Buttons = ({ setCount }) => {
-    const count = useContext(CountContext);
-    return (
-      <>
-        <button onClick={() => setCount(count + 1)}>Increase</button>
-        <button onClick={() => setCount(count - 1)}>Decrease</button>
-      </>
-    );
-}
+const Buttons = () => {
+  const [count, setCount] = useRecoilState(countAtom);
+  return (
+    <>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+      <button onClick={() => setCount(count - 1)}>Decrease</button>
+    </>
+  );
+};
 
 export default Buttons;
